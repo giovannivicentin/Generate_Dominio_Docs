@@ -20,4 +20,7 @@ class LoginDominio:
 
     def user_login(self):
         click_image(self, pyautogui-images/user.png, timeout=15)
-        
+        pyautogui.moveTo(952, 498, duration=0.5)
+        pyautogui.doubleClick()
+        user = "ROTINASDP"
+        pyautogui.typewrite(user)
