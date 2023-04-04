@@ -1,3 +1,5 @@
+import subprocess
+
 class OpenDominio:
     def __init__(self):
         self.module = None
@@ -6,12 +8,11 @@ class OpenDominio:
     def open_dominio(self):
         self.path = f'C:\\Dominio\\{self.module}'
         try:
-            with open(self.path, 'r') as file:
-                opened = file.read()
-                return opened
+            subprocess.run(["mstsc", self.path])
         except FileNotFoundError:
-            print(f'File {self.path} not found.')
-            return None
+            print("Rdp file not found. Verify the path.")
+        except Exception as e:
+            print("Error occurred while opening the .rdp file:", e)
 
     def open_folha(self):
         self.module = 'Folha.rdp'
@@ -24,3 +25,8 @@ class OpenDominio:
     def open_contabil(self):
         self.module = 'Contabil.rdp'
         return self.open_dominio()
+
+    def open_contabil(self):
+        self.module = 'Contabil.rdp'
+        return self.open_dominio()
+

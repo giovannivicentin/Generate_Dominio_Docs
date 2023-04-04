@@ -1,5 +1,3 @@
-from dominio.OpenDominio import OpenDominio
+from OpenDominio import open_folha
 
-dom = OpenDominio()
-run = dom.open_folha()
-print(run)
+open_folha(self)
