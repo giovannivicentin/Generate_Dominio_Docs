@@ -1,5 +1,6 @@
 import pyautogui
 import time
+from variables import user_dominio_folha, password_dominio_folha
 
 class LoginDominio:
     def __init__(self):
@@ -22,5 +23,4 @@ class LoginDominio:
         click_image(self, pyautogui-images/user.png, timeout=15)
         pyautogui.moveTo(952, 498, duration=0.5)
         pyautogui.doubleClick()
-        user = "ROTINASDP"
-        pyautogui.typewrite(user)
+        pyautogui.typewrite(user_dominio_folha)
