@@ -5,7 +5,6 @@ from variables import user_dominio_folha, password_dominio_folha
 class LoginDominio:
     def __init__(self):
         image_path = None
-        click_on_screen = None
 
     def click_image(self, image_path, timeout=15):
         start_time = time.time()
@@ -20,7 +19,19 @@ class LoginDominio:
         return False
 
     def user_login(self):
-        click_image(self, pyautogui-images/user.png, timeout=15)
+        image_path = pyautogui-images/user.png
+        click_image(self, image_path, timeout=15)
         pyautogui.moveTo(952, 498, duration=0.5)
         pyautogui.doubleClick()
         pyautogui.typewrite(user_dominio_folha)
+
+    def password_login(self):
+        image_path = pyautogui-images/password.png
+        click_image(self, image_path, timeout=15)
+        pyautogui.moveTo(984, 534, duration=0.5)
+        pyautogui.doubleClick()
+        pyautogui.typewrite(password_dominio_folha)
+
+    def ok_login(self):
+        image_path = pyautogui-images/ok.png
+        click_image(self, image_path, timeout=15)
