@@ -13,7 +13,7 @@ class OpenDominio:
     def open_module(self, module):
         if module not in self.MODULES:
             raise ValueError("Invalid module name")
-        path = f"./Dominio/{self.MODULES[module]}"
+        path = f"C:/Dominio/{self.MODULES[module]}"
         try:
             subprocess.run(["mstsc", path])
         except FileNotFoundError:
@@ -27,3 +27,5 @@ opener = OpenDominio()
 OpenFolha = opener.open_module('folha')
 OpenFiscal = opener.open_module('fiscal')
 OpenContabil = opener.open_module('contabil')
+
+OpenFolha()
