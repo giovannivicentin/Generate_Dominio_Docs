@@ -4,34 +4,34 @@ from variables import user_dominio_folha, password_dominio_folha
 
 class LoginDominio:
     def __init__(self):
-        image_path = None
+        pass
 
     def click_image(self, image_path, timeout=15):
         start_time = time.time()
         while time.time() - start_time < timeout:
-            try:
-                x, y = pyautogui.locateCenterOnScreen(image_path)
-                pyautogui.click(x, y)
+            location = pyautogui.locateCenterOnScreen(image_path)
+            if location is not None:
+                pyautogui.click(location)
                 return True
-            except TypeError:
-                time.sleep(1)
-                continue
+            time.sleep(1)
         return False
 
-    def user_login(self):
-        image_path = pyautogui-images/user.png
-        click_image(self, image_path, timeout=15)
-        pyautogui.moveTo(952, 498, duration=0.5)
+    def user_login(self, user):
+        self.click_image('pyautogui-images/user.png')
+        pyautogui.moveTo(x=952, y=498, duration=0.5)
         pyautogui.doubleClick()
-        pyautogui.typewrite(user_dominio_folha)
+        pyautogui.typewrite(user)
 
-    def password_login(self):
-        image_path = pyautogui-images/password.png
-        click_image(self, image_path, timeout=15)
-        pyautogui.moveTo(984, 534, duration=0.5)
+    def password_login(self, password):
+        self.click_image('pyautogui-images/password.png')
+        pyautogui.moveTo(x=984, y=534, duration=0.5)
         pyautogui.doubleClick()
-        pyautogui.typewrite(password_dominio_folha)
+        pyautogui.typewrite(password)
 
     def ok_login(self):
-        image_path = pyautogui-images/ok.png
-        click_image(self, image_path, timeout=15)
+        self.click_image('pyautogui-images/ok.png')
+
+login = LoginDominio()
+UserROTINASDP = login.user_login(user='ROTINASDP')
+PasswordROTINASDPDP = login.password_login(password='74157')
+OkLogin = login.ok_login()
