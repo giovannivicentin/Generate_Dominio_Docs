@@ -17,19 +17,19 @@ class LoginDominio:
         return False
 
     def user_login(self, user):
-        self.click_image('pyautogui-images/user.png')
+        self.click_image('dominio\\pyautogui-images\\user.png')
         pyautogui.moveTo(x=952, y=498, duration=0.5)
         pyautogui.doubleClick()
         pyautogui.typewrite(user)
 
     def password_login(self, password):
-        self.click_image('pyautogui-images/password.png')
+        self.click_image('dominio\\pyautogui-images\\password.png')
         pyautogui.moveTo(x=984, y=534, duration=0.5)
         pyautogui.doubleClick()
         pyautogui.typewrite(password)
 
     def ok_login(self):
-        if self.click_image('pyautogui-images/ok.png'):
-            pyautogui.click(pyautogui.locateCenterOnScreen('pyautogui-images/ok.png'))
+        if self.click_image('doiminio\\pyautogui-images\\ok.png'):
+            pyautogui.click(pyautogui.locateCenterOnScreen('dominio\\pyautogui-images\\ok.png'))
             return True
         return False
