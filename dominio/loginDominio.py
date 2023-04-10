@@ -27,9 +27,4 @@ class LoginDominio:
         pyautogui.moveTo(x=984, y=534, duration=0.5)
         pyautogui.doubleClick()
         pyautogui.typewrite(password)
-
-    def ok_login(self):
-        if self.click_image('doiminio\\pyautogui-images\\ok.png'):
-            pyautogui.click(pyautogui.locateCenterOnScreen('dominio\\pyautogui-images\\ok.png'))
-            return True
-        return False
+        pyautogui.press('enter')
