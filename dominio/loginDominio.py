@@ -1,6 +1,6 @@
 import pyautogui
 import time
-from variables import user_dominio_folha, password_dominio_folha
+
 
 class LoginDominio:
     def __init__(self):
@@ -29,9 +29,7 @@ class LoginDominio:
         pyautogui.typewrite(password)
 
     def ok_login(self):
-        self.click_image('pyautogui-images/ok.png')
-
-login = LoginDominio()
-UserROTINASDP = login.user_login(user='ROTINASDP')
-PasswordROTINASDPDP = login.password_login(password='74157')
-OkLogin = login.ok_login()
+        if self.click_image('pyautogui-images/ok.png'):
+            pyautogui.click(pyautogui.locateCenterOnScreen('pyautogui-images/ok.png'))
+            return True
+        return False
