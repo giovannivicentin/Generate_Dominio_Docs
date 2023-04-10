@@ -13,7 +13,7 @@ class OpenDominio:
     def open_module(self, module):
         if module not in self.MODULES:
             raise ValueError("Invalid module name")
-        path = f"C:/Dominio/{self.MODULES[module]}"
+        path = f"C:\\Dominio\\{self.MODULES[module]}"
         try:
             subprocess.run(["mstsc", path])
         except FileNotFoundError:
@@ -21,11 +21,12 @@ class OpenDominio:
         except Exception as e:
             print("Error occurred while opening the .rdp file:", e)
 
+'''
+# an example to import as folha:
 
-opener = OpenDominio()
+from OpenDominio import OpenDominio
 
-OpenFolha = opener.open_module('folha')
-OpenFiscal = opener.open_module('fiscal')
-OpenContabil = opener.open_module('contabil')
+od = OpenDominio()
+OpenFolha = od.open_module('folha')
 
-OpenFolha()
+'''

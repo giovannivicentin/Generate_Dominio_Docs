@@ -1,5 +1,4 @@
 from OpenDominio import OpenDominio
 
-dom = OpenDominio()
-run = dom.open_folha()
-print(run)
+od = OpenDominio()
+OpenFolha = od.open_module('folha')
