@@ -4,7 +4,7 @@ from datetime import datetime
 
 img_path = 'dominio\\pyautogui-images\\'
 
-class RotinaDominio:
+class RoutineParameters:
     
 
     def __init__(self):
