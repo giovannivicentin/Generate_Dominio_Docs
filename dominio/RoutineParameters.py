@@ -16,7 +16,7 @@ class RoutineParameters:
     }
 
 
-    def Select_Rotinas_Automaticas(self, rotina):
+    def Select_Automatic_Routines(self, rotina):
 
         logo_path = (img_path+'logo.png')
 
