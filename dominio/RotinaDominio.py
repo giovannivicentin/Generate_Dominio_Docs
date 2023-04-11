@@ -1,10 +1,10 @@
 import pyautogui
 import time
 
+img_path = 'dominio\\pyautogui-images\\'
 
 class RotinaDominio:
     
-    img_path = 'dominio\\pyautogui-images\\'
 
     def __init__(self):
         pass
@@ -47,7 +47,7 @@ class RotinaDominio:
             image1_path = self.rotinas.rotina[0]
             image2_path = self.rotinas.rotina[1]
 
-            max_wait_time = 17
+            max_wait_time = 15
             start_time = time.time()
             while time.time() - start_time < max_wait_time:
                 image1_location = pyautogui.locateOnScreen(image1_path)
@@ -76,19 +76,50 @@ class RotinaDominio:
                     pyautogui.moveTo(x=558, y=404, duration=0.2)
                     pyautogui.doubleClick()
                     time.sleep(0.2)
+                    
                     # select "competencia da execução"
                     pyautogui.moveTo(x=1349, y=404, duration=0.2)
                     pyautogui.click()
+
                     # choose "competencia da execução" white or blue
+                    comp_white = (img_path+'comp_da_exec_white.png')
+                    comp_blue = (img_path+'comp_da_exec_blue.png')
 
-                    # go back and click in "não agendar" and pass the code
+                    max_wait_time = 15
+                    start_time = time.time()
+                    while time.time() - start_time < max_wait_time:
+                        white_location = pyautogui.locateOnScreen(comp_white)
+                        blue_location = pyautogui.locateOnScreen(comp_blue)
 
+                        if white_location or blue_location:
+
+                            # discover which image is
+                            if white_location is not None:
+                                location_comp = white_location
+                            else:
+                                location_comp = blue_location
+
+                            # find the coords
+                            location_center = pyautogui.center(location_comp)
+
+                            # click in coords
+                            pyautogui.click(location_center)
+
+                            # go back and click in "não agendar" and pass the code
+                            pyautogui.moveTo(x=559, y=433, duration=0.2)
+                            pyautogui.click()
+
+                            # go to "Empresas" table to start other class
+                            pyautogui.moveTo(x=613, y=302, duration=0.3)
+                            pyautogui.click()
+                        else:
+                            raise ValueError('Could not find "competência da execução" image.')
                 else:
                     pyautogui.moveTo(x=558, y=404, duration=0.2)
                     pyautogui.doubleClick()
                     # verify the date in my computer, if the day is > 20, "competencia da execução" if is < 20, "competencia anteriro a execução"
 
             else:
-                print("Could not find automatic routine in Dominio")
+                raise ValueError("Could not find automatic routine in Dominio")
         else:
-            print("Could not load Domínio after login")
+            raise ValueError("Could not load Domínio after login")
