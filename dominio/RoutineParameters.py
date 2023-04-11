@@ -34,7 +34,7 @@ class RoutineParameters:
         # if the image was found, continue the code
         if image_location is not None:
 
-            pyautogui.sleep(3)
+            pyautogui.sleep(18)
 
             pyautogui.moveTo(x=960, y=491, duration=0.2)
             pyautogui.doubleClick()
