@@ -1,17 +1,17 @@
 import pyautogui
 import time
 
-img_path = 'dominio\\pyautogui-images\\'
 
 class RotinaDominio:
-
+    
+    img_path = 'dominio\\pyautogui-images\\'
 
     def __init__(self):
         pass
 
 
     rotinas = {
-        'folha_cm': [img_path+'gerar_docs_cm_blue.png', img_path+'gerar_docs_cm_green.png'],
+        'folha_cm': [img_path+'gerar_docs_cm_blue.png', img_path+'gerar_docs_cm_white.png'],
     }
 
 
@@ -75,7 +75,14 @@ class RotinaDominio:
                 if rotina[:2] == "ad":
                     pyautogui.moveTo(x=558, y=404, duration=0.2)
                     pyautogui.doubleClick()
-                    # select "competencia da execução", white or blue, go back and click in não agendar and pass the code :)
+                    time.sleep(0.2)
+                    # select "competencia da execução"
+                    pyautogui.moveTo(x=1349, y=404, duration=0.2)
+                    pyautogui.click()
+                    # choose "competencia da execução" white or blue
+
+                    # go back and click in "não agendar" and pass the code
+
                 else:
                     pyautogui.moveTo(x=558, y=404, duration=0.2)
                     pyautogui.doubleClick()
