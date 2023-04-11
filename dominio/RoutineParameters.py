@@ -21,20 +21,31 @@ class RoutineParameters:
         logo_path = (img_path+'logo.png')
 
         if rotina not in self.rotinas:
-            raise ValueError("Invalid rotina name")
+            raise ValueError("Invalid routine name")
 
-        # wait up to 30 seconds to find the image
-        max_wait_time = 30
+        # wait up to 40 seconds to find logo dominio image
+        max_wait_time = 40
         start_time = time.time()
         while time.time() - start_time < max_wait_time:
             image_location = pyautogui.locateOnScreen(logo_path)
             if image_location is not None:
                 break
+        
+        close_path = (img_path+'close.png')
+
+        max_wait_time2 = 30
+        start_time2 = time.time()
+        while time.time() - start_time2 < max_wait_time2:
+            image_location2 = pyautogui.locateOnScreen(close_path)
+            if image_location2 is not None:
+                close_center = pyautogui.center(close_path)
+                pyautogui.click(close_center, duration=0.3)
+                break
 
         # if the image was found, continue the code
         if image_location is not None:
 
-            pyautogui.sleep(18)
+            pyautogui.sleep(20)
 
             pyautogui.moveTo(x=960, y=491, duration=0.2)
             pyautogui.doubleClick()
