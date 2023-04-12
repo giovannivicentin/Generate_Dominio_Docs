@@ -23,11 +23,12 @@ class RoutineParameters:
         if rotina not in self.rotinas:
             raise ValueError("Invalid routine name")
 
-        # wait up to 60 seconds to find logo dominio image
+        # wait up to 60 seconds to find agente image that means you joined in dominio
         max_wait_time = 60
         start_time = time.time()
         while time.time() - start_time < max_wait_time:
-            image_location = pyautogui.locateOnScreen(agente_path)
+            region = (1680, 974, 239, 105)
+            image_location = pyautogui.locateOnScreen(agente_path, region=region)
             if image_location is not None:
                 break
 
