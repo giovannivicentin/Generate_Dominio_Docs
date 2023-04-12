@@ -18,8 +18,6 @@ class RoutineParameters:
 
     def Select_Automatic_Routines(self, rotina):
 
-        agente_path = (img_path+'agente.png')
-
         if rotina not in self.rotinas:
             raise ValueError("Invalid routine name")
 
@@ -28,7 +26,7 @@ class RoutineParameters:
         start_time = time.time()
         while time.time() - start_time < max_wait_time:
             region = (1680, 974, 239, 105)
-            image_location = pyautogui.locateOnScreen(agente_path, region=region)
+            image_location = pyautogui.locateOnScreen(img_path+'agente.png', region=region)
             if image_location is not None:
                 break
 
