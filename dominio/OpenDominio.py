@@ -1,18 +1,15 @@
 import subprocess
 
+
 class OpenDominio:
-
-
     MODULES = {
         'folha': 'Folha.rdp',
         'fiscal': 'Fiscal.rdp',
         'contabil': 'Contabil.rdp'
     }
 
-
     def __init__(self):
         pass
-
 
     def open_module(self, module):
         if module not in self.MODULES:

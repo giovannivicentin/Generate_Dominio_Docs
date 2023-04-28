@@ -25,12 +25,10 @@ class RoutineParameters:
         while time.time() - start_time < max_wait_time:
             findImgPath = (img_path + 'agente.png')
 
-            image_location = pyautogui.locateOnScreen(findImgPath)
-            if image_location is not None:
-                break
-
+            image_location = pyautogui.locateOnScreen(findImgPath, region=(1722, 977, 195, 100))
             # if the image was found, continue the code
             if image_location is not None:
+                break
 
                 pyautogui.sleep(3)
 
