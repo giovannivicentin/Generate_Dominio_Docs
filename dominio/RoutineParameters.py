@@ -4,17 +4,15 @@ from datetime import datetime
 
 img_path = 'dominio\\pyautogui-images\\'
 
+
 class RoutineParameters:
-    
 
     def __init__(self):
         pass
 
-
     rotinas = {
-        'folha_cm': [img_path+'gerar_docs_cm_blue.png', img_path+'gerar_docs_cm_white.png'],
+        'folha_cm': [img_path + 'gerar_docs_cm_blue.png', img_path + 'gerar_docs_cm_white.png'],
     }
-
 
     def Select_Automatic_Routines(self, rotina):
 
@@ -25,120 +23,71 @@ class RoutineParameters:
         max_wait_time = 60
         start_time = time.time()
         while time.time() - start_time < max_wait_time:
-            findImgPath = (img_path+'agente.png')
-            
+            findImgPath = (img_path + 'agente.png')
+
             image_location = pyautogui.locateOnScreen(findImgPath)
             if image_location is not None:
                 break
 
-        # if the image was found, continue the code
-        if image_location is not None:
+            # if the image was found, continue the code
+            if image_location is not None:
 
-            pyautogui.sleep(3)
+                pyautogui.sleep(3)
 
-            pyautogui.moveTo(x=960, y=491, duration=0.2)
-            pyautogui.click()
+                pyautogui.moveTo(x=960, y=491, duration=0.2)
+                pyautogui.click()
 
-            pyautogui.press('esc')
-            pyautogui.press('esc')
+                pyautogui.press('esc')
+                pyautogui.press('esc')
 
-            pyautogui.hotkey('alt', 'p')
-            pyautogui.hotkey('alt', 'u')
-            pyautogui.sleep(2)
+                pyautogui.hotkey('alt', 'p')
+                pyautogui.hotkey('alt', 'u')
+                pyautogui.sleep(2)
 
-            # find the routine
+                # find the routine
 
-            image1_path = self.rotinas.rotina[0]
-            image2_path = self.rotinas.rotina[1]
+                image1_path = self.rotinas[0]
+                image2_path = self.rotinas[1]
 
-            max_wait_time = 15
-            start_time = time.time()
-            while time.time() - start_time < max_wait_time:
-                image1_location = pyautogui.locateOnScreen(image1_path)
-                image2_location = pyautogui.locateOnScreen(image2_path)
+                max_wait_time = 15
+                start_time = time.time()
+                while time.time() - start_time < max_wait_time:
+                    image1_location = pyautogui.locateOnScreen(image1_path)
+                    image2_location = pyautogui.locateOnScreen(image2_path)
 
-                if image1_location or image2_location:
+                    if image1_location or image2_location:
 
-                    # discover which image is
-                    if image1_location is not None:
-                        image_location = image1_location
-
-                    else:
-                        image_location = image2_location
-
-                    # find the coords
-                    image_center = pyautogui.center(image_location)
-                    # click in coords
-                    pyautogui.doubleClick(image_center)
-                    # go to edit
-                    pyautogui.hotkey('alt', 'd')
-                    time.sleep(1.5)
-                    break
-
-                # verify if is adto
-                if rotina[:2] == "ad":
-
-                    # click in "Na data"
-                    pyautogui.moveTo(x=558, y=404, duration=0.2)
-                    pyautogui.doubleClick()
-                    time.sleep(0.2)
-                    
-                    # select competence in calculus
-                    pyautogui.moveTo(x=1349, y=404, duration=0.2)
-                    pyautogui.click()
-
-                    # declarate img pathings
-                    comp_white = (img_path+'comp_da_exec_white.png')
-                    comp_blue = (img_path+'comp_da_exec_blue.png')
-
-                    # choose "competencia da execução" white or blue
-                    max_wait_time = 15
-                    start_time = time.time()
-                    while time.time() - start_time < max_wait_time:
-                        white_location = pyautogui.locateOnScreen(comp_white)
-                        blue_location = pyautogui.locateOnScreen(comp_blue)
-
-                        if white_location or blue_location:
-
-                            # discover which image is
-                            if white_location is not None:
-                                location_comp = white_location
-                            else:
-                                location_comp = blue_location
-
-                            # find the coords
-                            location_center = pyautogui.center(location_comp)
-
-                            # click in coords
-                            pyautogui.click(location_center)
-
-                            # go back and click in "não agendar" and pass the code
-                            pyautogui.moveTo(x=559, y=433, duration=0.2)
-                            pyautogui.click()
-
-                            # go to "Empresas" table to start other class
-                            pyautogui.moveTo(x=613, y=302, duration=0.3)
-                            pyautogui.click()
+                        # discover which image is
+                        if image1_location is not None:
+                            image_location = image1_location
 
                         else:
-                            raise ValueError('Could not find "competência da execução" image.')
-                else:
-                    # click in "Na data"
-                    pyautogui.moveTo(x=558, y=404, duration=0.2)
-                    pyautogui.doubleClick()
+                            image_location = image2_location
 
-                    # get now date
-                    today = datetime.now()
+                        # find the coords
+                        image_center = pyautogui.center(image_location)
+                        # click in coords
+                        pyautogui.doubleClick(image_center)
+                        # go to edit
+                        pyautogui.hotkey('alt', 'd')
+                        time.sleep(1.5)
+                        break
 
-                    # verify the date in computer, if the day is >= 20, select "competencia da execução" 
-                    if today.day >= 20:
+                    # verify if is adto
+                    if rotina[:2] == "ad":
+
+                        # click in "Na data"
+                        pyautogui.moveTo(x=558, y=404, duration=0.2)
+                        pyautogui.doubleClick()
+                        time.sleep(0.2)
+
                         # select competence in calculus
                         pyautogui.moveTo(x=1349, y=404, duration=0.2)
                         pyautogui.click()
 
                         # declarate img pathings
-                        comp_white = (img_path+'comp_da_exec_white.png')
-                        comp_blue = (img_path+'comp_da_exec_blue.png')
+                        comp_white = (img_path + 'comp_da_exec_white.png')
+                        comp_blue = (img_path + 'comp_da_exec_blue.png')
 
                         # choose "competencia da execução" white or blue
                         max_wait_time = 15
@@ -163,52 +112,101 @@ class RoutineParameters:
 
                                 # go back and click in "não agendar" and pass the code
                                 pyautogui.moveTo(x=559, y=433, duration=0.2)
-                                pyautogui.doubleClick()
+                                pyautogui.click()
 
                                 # go to "Empresas" table to start other class
                                 pyautogui.moveTo(x=613, y=302, duration=0.3)
-                                pyautogui.doubleClick()
+                                pyautogui.click()
 
-                    # else is < 20, "competencia anterior a execução"
+                            else:
+                                raise ValueError('Could not find "competência da execução" image.')
                     else:
-                        # select competence in calculus
-                        pyautogui.moveTo(x=1349, y=404, duration=0.2)
-                        pyautogui.click()
+                        # click in "Na data"
+                        pyautogui.moveTo(x=558, y=404, duration=0.2)
+                        pyautogui.doubleClick()
 
-                        # declarate img pathings
-                        prior_comp_white = (img_path+'prior_comp_da_exec_white.png')
-                        prior_comp_blue = (img_path+'prior_comp_da_exec_blue.png')
+                        # get now date
+                        today = datetime.now()
 
-                        # choose "competencia anterior à execução" white or blue
-                        max_wait_time = 15
-                        start_time = time.time()
-                        while time.time() - start_time < max_wait_time:
-                            prior_white_location = pyautogui.locateOnScreen(prior_comp_white)
-                            prior_blue_location = pyautogui.locateOnScreen(prior_comp_blue)
+                        # verify the date in computer, if the day is >= 20, select "competencia da execução"
+                        if today.day >= 20:
+                            # select competence in calculus
+                            pyautogui.moveTo(x=1349, y=404, duration=0.2)
+                            pyautogui.click()
 
-                            if prior_white_location or prior_blue_location:
+                            # declarate img pathings
+                            comp_white = (img_path + 'comp_da_exec_white.png')
+                            comp_blue = (img_path + 'comp_da_exec_blue.png')
 
-                                # discover which image is
-                                if prior_white_location is not None:
-                                    prior_location_comp = prior_white_location
-                                else:
-                                    prior_location_comp = prior_blue_location
+                            # choose "competencia da execução" white or blue
+                            max_wait_time = 15
+                            start_time = time.time()
+                            while time.time() - start_time < max_wait_time:
+                                white_location = pyautogui.locateOnScreen(comp_white)
+                                blue_location = pyautogui.locateOnScreen(comp_blue)
 
-                                # find the coords
-                                prior_location_center = pyautogui.center(prior_location_comp)
+                                if white_location or blue_location:
 
-                                # click in coords
-                                pyautogui.click(prior_location_center)
+                                    # discover which image is
+                                    if white_location is not None:
+                                        location_comp = white_location
+                                    else:
+                                        location_comp = blue_location
 
-                                # go back and click in "não agendar" and pass the code
-                                pyautogui.moveTo(x=559, y=433, duration=0.2)
-                                pyautogui.doubleClick()
+                                    # find the coords
+                                    location_center = pyautogui.center(location_comp)
 
-                                # go to "Empresas" table to start other class
-                                pyautogui.moveTo(x=613, y=302, duration=0.3)
-                                pyautogui.doubleClick()
+                                    # click in coords
+                                    pyautogui.click(location_center)
 
-            else:
-                raise ValueError("Could not find automatic routine in Dominio")
+                                    # go back and click in "não agendar" and pass the code
+                                    pyautogui.moveTo(x=559, y=433, duration=0.2)
+                                    pyautogui.doubleClick()
+
+                                    # go to "Empresas" table to start other class
+                                    pyautogui.moveTo(x=613, y=302, duration=0.3)
+                                    pyautogui.doubleClick()
+
+                        # else is < 20, "competencia anterior a execução"
+                        else:
+                            # select competence in calculus
+                            pyautogui.moveTo(x=1349, y=404, duration=0.2)
+                            pyautogui.click()
+
+                            # declarate img pathings
+                            prior_comp_white = (img_path + 'prior_comp_da_exec_white.png')
+                            prior_comp_blue = (img_path + 'prior_comp_da_exec_blue.png')
+
+                            # choose "competencia anterior à execução" white or blue
+                            max_wait_time = 15
+                            start_time = time.time()
+                            while time.time() - start_time < max_wait_time:
+                                prior_white_location = pyautogui.locateOnScreen(prior_comp_white)
+                                prior_blue_location = pyautogui.locateOnScreen(prior_comp_blue)
+
+                                if prior_white_location or prior_blue_location:
+
+                                    # discover which image is
+                                    if prior_white_location is not None:
+                                        prior_location_comp = prior_white_location
+                                    else:
+                                        prior_location_comp = prior_blue_location
+
+                                    # find the coords
+                                    prior_location_center = pyautogui.center(prior_location_comp)
+
+                                    # click in coords
+                                    pyautogui.click(prior_location_center)
+
+                                    # go back and click in "não agendar" and pass the code
+                                    pyautogui.moveTo(x=559, y=433, duration=0.2)
+                                    pyautogui.doubleClick()
+
+                                    # go to "Empresas" table to start other class
+                                    pyautogui.moveTo(x=613, y=302, duration=0.3)
+                                    pyautogui.doubleClick()
+
+                else:
+                    raise ValueError("Could not find automatic routine in Dominio")
         else:
             raise ValueError("Could not load Dominio after login")
