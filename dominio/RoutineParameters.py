@@ -28,7 +28,7 @@ class RoutineParameters:
         while time.time() - start_time < max_wait_time:
             for process in psutil.process_iter():
                 process_info = process.as_dict(attrs=['name'])
-                if process_info["name"] and app_name.lower() in process_info["name"].lower():
+                if process_info['name'] and app_name.lower() in process_info['name'].lower():
                     app_running = True
                     break
             if app_running:
