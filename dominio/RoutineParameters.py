@@ -35,7 +35,7 @@ class RoutineParameters:
                 break
             time.sleep(1)
 
-            pyautogui.sleep(3)
+            pyautogui.sleep(40)
 
             pyautogui.moveTo(x=960, y=491, duration=0.2)
             pyautogui.click()
