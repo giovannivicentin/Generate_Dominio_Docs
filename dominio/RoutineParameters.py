@@ -48,9 +48,8 @@ class RoutineParameters:
             pyautogui.sleep(2)
 
             # find the routine
-
-            image1_path = self.rotinas[0]
-            image2_path = self.rotinas[1]
+            image1_path = self.rotinas[rotina][0]
+            image2_path = self.rotinas[rotina][1]
 
             max_wait_time = 15
             start_time = time.time()
