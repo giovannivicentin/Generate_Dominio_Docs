@@ -19,6 +19,8 @@ class RoutineParameters:
         if rotina not in self.rotinas:
             raise ValueError("Invalid routine name")
 
+        key_name = list(rotinas.keys())[0]
+
         pyautogui.sleep(45)
 
         pyautogui.moveTo(x=960, y=491, duration=0.2)
@@ -37,16 +39,16 @@ class RoutineParameters:
         pyautogui.sleep(2)
 
         # find the routine
-        image1_path = self.rotinas[rotina][0]
-        image2_path = self.rotinas[rotina][1]
+        image1_path = self.rotinas[key_name][0]
+        image2_path = self.rotinas[key_name][1]
 
         max_wait_time = 30
         start_timer = time.time()
 
         # This script searches for two images on the screen and performs a set of actions when one of them is found.
         while time.time() - start_timer < max_wait_time:
-            image1_location = pyautogui.locateOnScreen(image1_path, region=(546, 272, 824, 582))
-            image2_location = pyautogui.locateOnScreen(image2_path, region=(546, 272, 824, 582))
+            image1_location = pyautogui.locateOnScreen(image1_path, region=(576, 357, 398, 341))
+            image2_location = pyautogui.locateOnScreen(image2_path, region=(576, 357, 398, 341))
 
             if image1_location or image2_location:
 
@@ -199,5 +201,5 @@ class RoutineParameters:
                                     pyautogui.moveTo(x=613, y=302, duration=0.3)
                                     pyautogui.doubleClick()
 
-        else:
-            raise ValueError("Could not find automatic routine in Dominio")
+            else:
+                raise ValueError("Could not find automatic routine in Dominio")
