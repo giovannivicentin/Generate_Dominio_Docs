@@ -195,5 +195,3 @@ class RoutineParameters:
 
             else:
                 raise ValueError("Could not find automatic routine in Dominio")
-        else:
-            raise ValueError("Could not load Dominio after login")
