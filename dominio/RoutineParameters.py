@@ -11,7 +11,7 @@ class RoutineParameters:
         pass
 
     rotinas = {
-        'folha_cm': [img_path + 'gerar_docs_cm_blue.png', img_path + 'gerar_docs_cm_white.png'],
+        'folha_cm': [(img_path + 'gerar_docs_cm_blue.png'), (img_path + 'gerar_docs_cm_white.png')],
     }
 
     def Select_Automatic_Routines(self, rotina):
@@ -24,10 +24,17 @@ class RoutineParameters:
         pyautogui.moveTo(x=960, y=491, duration=0.2)
         pyautogui.click()
 
-        pyautogui.hotkey('esc').sleep(0.25)
-        pyautogui.press('esc').sleep(0.5)
-        pyautogui.hotkey('alt', 'p').sleep(1)
-        pyautogui.hotkey('u').sleep(2)
+        pyautogui.hotkey('esc')
+        pyautogui.sleep(0.25)
+
+        pyautogui.press('esc')
+        pyautogui.sleep(0.5)
+
+        pyautogui.hotkey('alt', 'p')
+        pyautogui.sleep(1)
+
+        pyautogui.hotkey('u')
+        pyautogui.sleep(2)
 
         # find the routine
         image1_path = self.rotinas[rotina][0]
