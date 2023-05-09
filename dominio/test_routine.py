@@ -16,10 +16,10 @@ image2_path = rotinas[key_name][1]
 
 while time.time() - start_timer < max_wait_time:
     while True:
-        image1_location = pyautogui.locateOnScreen(image1_path, region=(576, 357, 398, 341))
+        image1_location = pyautogui.locateOnScreen(image1_path, region=(576, 377, 400, 323))
         if image1_location is not None:
             break
-        image2_location = pyautogui.locateOnScreen(image2_path, region=(576, 357, 398, 341))
+        image2_location = pyautogui.locateOnScreen(image2_path, region=(576, 377, 400, 323))
         if image2_location is not None:
             break
         time.sleep(0.1)
