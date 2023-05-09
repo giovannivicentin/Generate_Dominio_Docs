@@ -45,8 +45,8 @@ class RoutineParameters:
 
         # This script searches for two images on the screen and performs a set of actions when one of them is found.
         while time.time() - start_timer < max_wait_time:
-            image1_location = pyautogui.locateOnScreen(image1_path)
-            image2_location = pyautogui.locateOnScreen(image2_path)
+            image1_location = pyautogui.locateOnScreen(image1_path, region=(546, 272, 824, 582))
+            image2_location = pyautogui.locateOnScreen(image2_path, region=(546, 272, 824, 582))
 
             if image1_location or image2_location:
 
