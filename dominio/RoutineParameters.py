@@ -20,39 +20,21 @@ class RoutineParameters:
         if rotina not in self.rotinas:
             raise ValueError("Invalid routine name")
 
-        # wait up to 60 seconds to verify if dominio is open
-        app_name = "mstsc.exe"
-        max_wait_time = 60
-        start_time = time.time()
-        app_running = False
-        while not app_running and time.time() - start_time < max_wait_time:
-            for process in psutil.process_iter():
-                process_info = process.as_dict(attrs=['name'])
-                if process_info['name'] and app_name.lower() in process_info['name'].lower():
-                    app_running = True
-                    time.sleep(1)
-                    break
-
-                time.sleep(1)
-
-            pyautogui.sleep(40)
+            pyautogui.sleep(45)
 
             pyautogui.moveTo(x=960, y=491, duration=0.2)
             pyautogui.click()
 
-            pyautogui.press('esc')
-            pyautogui.press('esc')
-            pyautogui.sleep(0.5)
-            pyautogui.hotkey('alt', 'p')
-            pyautogui.sleep(1)
-            pyautogui.hotkey('u')
-            pyautogui.sleep(2)
+            pyautogui.hotkey('esc').sleep(0.25)
+            pyautogui.press('esc').sleep(0.5)
+            pyautogui.hotkey('alt', 'p').sleep(1)
+            pyautogui.hotkey('u').sleep(2)
 
             # find the routine
             image1_path = self.rotinas[rotina][0]
             image2_path = self.rotinas[rotina][1]
 
-            max_wait_time = 15
+            max_wait_time = 30
             start_timer = time.time()
 
             # This script searches for two images on the screen and performs a set of actions when one of them is found.
