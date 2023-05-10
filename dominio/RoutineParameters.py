@@ -10,16 +10,14 @@ class RoutineParameters:
     def __init__(self):
         pass
 
-    rotinas = {
+    routines = {
         'folha_cm': [(img_path + 'gerar_docs_cm_blue.png'), (img_path + 'gerar_docs_cm_white.png')],
     }
 
     def Select_Automatic_Routines(self, rotina):
 
-        if rotina not in self.rotinas:
+        if routine not in self.routines:
             raise ValueError("Invalid routine name")
-
-        key_name = list(rotinas.keys())[0]
 
         pyautogui.sleep(45)
 
@@ -39,8 +37,8 @@ class RoutineParameters:
         pyautogui.sleep(2)
 
         # find the routine
-        image1_path = self.rotinas[key_name][0]
-        image2_path = self.rotinas[key_name][1]
+        image1_path = self.routines[routine.Param][0]
+        image2_path = self.routines[routine.param][1]
 
         max_wait_time = 30
         start_timer = time.time()
