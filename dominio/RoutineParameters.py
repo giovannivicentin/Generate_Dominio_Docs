@@ -14,7 +14,7 @@ class RoutineParameters:
         'folha_cm': [(img_path + 'gerar_docs_cm_blue.png'), (img_path + 'gerar_docs_cm_white.png')],
     }
 
-    def Select_Automatic_Routines(self, rotina):
+    def Select_Automatic_Routines(self, routine):
 
         if routine not in self.routines:
             raise ValueError("Invalid routine name")
