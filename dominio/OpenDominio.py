@@ -21,14 +21,3 @@ class OpenDominio:
             print("Rdp file not found. Verify the path.")
         except Exception as e:
             print("Error occurred while opening the .rdp file:", e)
-
-
-'''
-# an example to import as folha:
-
-from OpenDominio import OpenDominio
-
-od = OpenDominio()
-OpenFolha = od.open_module('folha')
-
-'''
