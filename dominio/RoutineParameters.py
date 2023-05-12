@@ -70,12 +70,12 @@ class RoutineParameters:
 
                 if rotina[:2] == "ad":
                     # click in "Na data"
-                    pyautogui.moveTo(x=558, y=404, duration=0.2)
+                    pyautogui.moveTo(x=478, y=448, duration=0.2)
                     pyautogui.doubleClick()
                     time.sleep(0.2)
 
                     # select competence in calculus
-                    pyautogui.moveTo(x=1349, y=404, duration=0.2)
+                    pyautogui.moveTo(x=1427, y=449, duration=0.2)
                     pyautogui.click()
 
                     # declarate img pathings
@@ -104,11 +104,11 @@ class RoutineParameters:
                             pyautogui.click(location_center)
 
                             # go back and click in "não agendar" and pass the code
-                            pyautogui.moveTo(x=559, y=433, duration=0.2)
+                            pyautogui.moveTo(x=478, y=481, duration=0.2)
                             pyautogui.click()
 
                             # go to "Empresas" table to start other class
-                            pyautogui.moveTo(x=613, y=302, duration=0.3)
+                            pyautogui.moveTo(x=543, y=329, duration=0.3)
                             pyautogui.click()
 
                             break
@@ -118,7 +118,7 @@ class RoutineParameters:
 
                     else:
                         # click in "Na data"
-                        pyautogui.moveTo(x=558, y=404, duration=0.2)
+                        pyautogui.moveTo(x=478, y=448, duration=0.2)
                         pyautogui.doubleClick()
 
                         # get now date
@@ -127,7 +127,7 @@ class RoutineParameters:
                         # verify the date in computer, if the day is >= 20, select "competencia da execução"
                         if today.day >= 20:
                             # select competence in calculus
-                            pyautogui.moveTo(x=1349, y=404, duration=0.2)
+                            pyautogui.moveTo(x=1427, y=449, duration=0.2)
                             pyautogui.click()
 
                             # declarate img pathings
@@ -156,17 +156,17 @@ class RoutineParameters:
                                     pyautogui.click(location_center)
 
                                     # go back and click in "não agendar" and pass the code
-                                    pyautogui.moveTo(x=559, y=433, duration=0.2)
+                                    pyautogui.moveTo(x=478, y=481, duration=0.2)
                                     pyautogui.doubleClick()
 
                                     # go to "Empresas" table to start other class
-                                    pyautogui.moveTo(x=613, y=302, duration=0.3)
+                                    pyautogui.moveTo(x=543, y=329, duration=0.3)
                                     pyautogui.doubleClick()
 
                         # else is < 20, "competencia anterior a execução"
                         else:
                             # select competence in calculus
-                            pyautogui.moveTo(x=1349, y=404, duration=0.2)
+                            pyautogui.moveTo(x=1427, y=449, duration=0.2)
                             pyautogui.click()
 
                             # declarate img pathings
@@ -195,11 +195,11 @@ class RoutineParameters:
                                     pyautogui.click(prior_location_center)
 
                                     # go back and click in "não agendar" and pass the code
-                                    pyautogui.moveTo(x=559, y=433, duration=0.2)
+                                    pyautogui.moveTo(x=478, y=481, duration=0.2)
                                     pyautogui.doubleClick()
 
                                     # go to "Empresas" table to start other class
-                                    pyautogui.moveTo(x=613, y=302, duration=0.3)
+                                    pyautogui.moveTo(x=543, y=329, duration=0.3)
                                     pyautogui.doubleClick()
 
             else:
