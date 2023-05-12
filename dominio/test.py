@@ -10,4 +10,4 @@ UserROTINASDP = login.user_login(user='ROTINASDP')
 PasswordROTINASDP = login.password_login(password='74157')
 
 Param = RoutineParameters()
-RoutineFolha = Param.RoutineParameters('folha_cm')
+RoutineFolha = Param.Select_Automatic_Routines('folha_cm')

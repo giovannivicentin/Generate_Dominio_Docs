@@ -33,6 +33,9 @@ class RoutineParameters:
         pyautogui.press('esc')
         pyautogui.sleep(0.5)
 
+        pyautogui.moveTo(x=960, y=491, duration=0.2)
+        pyautogui.click()
+
         pyautogui.hotkey('alt', 'p')
         pyautogui.sleep(1)
 
