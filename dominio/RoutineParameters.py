@@ -11,7 +11,7 @@ class RoutineParameters:
         pass
 
     routines = {
-        'folha_cm': [(img_path + 'gerar_docs_cm_blue.png'), (img_path + 'gerar_docs_cm_white.png')],
+        'folha_cm': [(img_path + 'generateDocumentsFolhaBlue.png'), (img_path + 'generateDocumentsFolha.png')],
     }
 
     def Select_Automatic_Routines(self, routine):
