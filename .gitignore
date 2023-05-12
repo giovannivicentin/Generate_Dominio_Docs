@@ -1,2 +1,2 @@
-dominio/_pycache_
-venv/
+__pycache__
+venv
