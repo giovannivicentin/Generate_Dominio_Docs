@@ -76,8 +76,8 @@ class RoutineParameters:
                     pyautogui.click()
 
                     # declarate img pathings
-                    comp_white = (img_path + 'comp_da_exec_white.png')
-                    comp_blue = (img_path + 'comp_da_exec_blue.png')
+                    comp_white = (img_path + 'ExecutionCompetence.png')
+                    comp_blue = (img_path + 'ExecutionCompetenceBlue.png')
 
                     # choose "competencia da execução" white or blue
                     max_wait_time = 15
@@ -128,8 +128,8 @@ class RoutineParameters:
                             pyautogui.click()
 
                             # declarate img pathings
-                            comp_white = (img_path + 'comp_da_exec_white.png')
-                            comp_blue = (img_path + 'comp_da_exec_blue.png')
+                            comp_white = (img_path + 'executionCompetence.png')
+                            comp_blue = (img_path + 'executionCompetenceBlue.png')
 
                             # choose "competencia da execução" white or blue
                             max_wait_time = 15
@@ -167,8 +167,8 @@ class RoutineParameters:
                             pyautogui.click()
 
                             # declarate img pathings
-                            prior_comp_white = (img_path + 'prior_comp_da_exec_white.png')
-                            prior_comp_blue = (img_path + 'prior_comp_da_exec_blue.png')
+                            prior_comp_white = (img_path + 'priorExecutionCompetence.png')
+                            prior_comp_blue = (img_path + 'priorExecutionCompetenceBlue.png')
 
                             # choose "competencia anterior à execução" white or blue
                             max_wait_time = 15
