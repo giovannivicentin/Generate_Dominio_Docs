@@ -17,24 +17,25 @@ class LoginDominio:
                 pyautogui.click(location)
                 return True
             time.sleep(1)
-        return False
+        return None
 
     def user_login(self, user):
         center = self.click_image('dominio\\pyautogui-images\\user.png', return_position=True)
         if center is None:
             raise Exception("User image not found")
         x, y = center
-        x += 100
-        pyautogui.click(x=x, y=y)
+        x += 150
+        pyautogui.doubleClick(x=x, y=y)
+        pyautogui.sleep(0.25)
+        pyautogui.press('backspace')
         pyautogui.typewrite(user)
 
     def password_login(self, password):
-        center = self.click_image('dominio\\pyautogui-images\\password.png', return_position=True)
-        if center is None:
-            raise Exception("Password image not found")
-        x, y = center
-        x += 100
-        pyautogui.click(x=x, y=y)
+        x = 975
+        y = 534
+        pyautogui.doubleClick(x=x, y=y)
+        pyautogui.sleep(0.25)
+        pyautogui.press('backspace')
         pyautogui.typewrite(password)
+        pyautogui.sleep(0.25)
         pyautogui.press('enter')
-
