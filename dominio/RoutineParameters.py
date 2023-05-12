@@ -27,6 +27,9 @@ class RoutineParameters:
         pyautogui.hotkey('esc')
         pyautogui.sleep(0.25)
 
+        pyautogui.hotkey('esc')
+        pyautogui.sleep(0.25)
+
         pyautogui.press('esc')
         pyautogui.sleep(0.5)
 
@@ -45,8 +48,8 @@ class RoutineParameters:
 
         # This script searches for two images on the screen and performs a set of actions when one of them is found.
         while time.time() - start_timer < max_wait_time:
-            image1_location = pyautogui.locateOnScreen(image1_path, region=(576, 357, 398, 341))
-            image2_location = pyautogui.locateOnScreen(image2_path, region=(576, 357, 398, 341))
+            image1_location = pyautogui.locateOnScreen(image1_path, region=(497, 349, 479, 387))
+            image2_location = pyautogui.locateOnScreen(image2_path, region=(497, 349, 479, 387))
 
             if image1_location or image2_location:
 
