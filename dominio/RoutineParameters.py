@@ -21,7 +21,7 @@ class RoutineParameters:
 
         pyautogui.sleep(45)
 
-        pyautogui.moveTo(x=960, y=491, duration=0.2)
+        pyautogui.moveTo(x=640, y=400, duration=0.2)
         pyautogui.click()
 
         pyautogui.hotkey('esc')
@@ -33,7 +33,7 @@ class RoutineParameters:
         pyautogui.press('esc')
         pyautogui.sleep(0.5)
 
-        pyautogui.moveTo(x=960, y=491, duration=0.2)
+        pyautogui.moveTo(x=640, y=400, duration=0.2)
         pyautogui.click()
 
         pyautogui.hotkey('alt', 'p')
@@ -51,8 +51,8 @@ class RoutineParameters:
 
         # This script searches for two images on the screen and performs a set of actions when one of them is found.
         while time.time() - start_timer < max_wait_time:
-            image1_location = pyautogui.locateOnScreen(image1_path, region=(497, 349, 479, 387))
-            image2_location = pyautogui.locateOnScreen(image2_path, region=(497, 349, 479, 387))
+            image1_location = pyautogui.locateOnScreen(image1_path, region=(332, 272, 318, 258))
+            image2_location = pyautogui.locateOnScreen(image2_path, region=(332, 272, 318, 258))
 
             if image1_location or image2_location:
 
@@ -73,12 +73,12 @@ class RoutineParameters:
 
                 if rotina[:2] == "ad":
                     # click in "Na data"
-                    pyautogui.moveTo(x=478, y=448, duration=0.2)
+                    pyautogui.moveTo(x=319, y=298, duration=0.2)
                     pyautogui.doubleClick()
                     time.sleep(0.2)
 
                     # select competence in calculus
-                    pyautogui.moveTo(x=1427, y=449, duration=0.2)
+                    pyautogui.moveTo(x=952, y=298, duration=0.2)
                     pyautogui.click()
 
                     # declarate img pathings
@@ -107,11 +107,11 @@ class RoutineParameters:
                             pyautogui.click(location_center)
 
                             # go back and click in "não agendar" and pass the code
-                            pyautogui.moveTo(x=478, y=481, duration=0.2)
+                            pyautogui.moveTo(x=318, y=320, duration=0.2)
                             pyautogui.click()
 
                             # go to "Empresas" table to start other class
-                            pyautogui.moveTo(x=543, y=329, duration=0.3)
+                            pyautogui.moveTo(x=358, y=216, duration=0.3)
                             pyautogui.click()
 
                             break
@@ -121,7 +121,7 @@ class RoutineParameters:
 
                     else:
                         # click in "Na data"
-                        pyautogui.moveTo(x=478, y=448, duration=0.2)
+                        pyautogui.moveTo(x=319, y=298, duration=0.2)
                         pyautogui.doubleClick()
 
                         # get now date
@@ -130,7 +130,7 @@ class RoutineParameters:
                         # verify the date in computer, if the day is >= 20, select "competencia da execução"
                         if today.day >= 20:
                             # select competence in calculus
-                            pyautogui.moveTo(x=1427, y=449, duration=0.2)
+                            pyautogui.moveTo(x=952, y=298, duration=0.2)
                             pyautogui.click()
 
                             # declarate img pathings
@@ -159,17 +159,17 @@ class RoutineParameters:
                                     pyautogui.click(location_center)
 
                                     # go back and click in "não agendar" and pass the code
-                                    pyautogui.moveTo(x=478, y=481, duration=0.2)
+                                    pyautogui.moveTo(x=318, y=320, duration=0.2)
                                     pyautogui.doubleClick()
 
                                     # go to "Empresas" table to start other class
-                                    pyautogui.moveTo(x=543, y=329, duration=0.3)
+                                    pyautogui.moveTo(x=358, y=216, duration=0.3)
                                     pyautogui.doubleClick()
 
                         # else is < 20, "competencia anterior a execução"
                         else:
                             # select competence in calculus
-                            pyautogui.moveTo(x=1427, y=449, duration=0.2)
+                            pyautogui.moveTo(x=952, y=298, duration=0.2)
                             pyautogui.click()
 
                             # declarate img pathings
@@ -198,11 +198,11 @@ class RoutineParameters:
                                     pyautogui.click(prior_location_center)
 
                                     # go back and click in "não agendar" and pass the code
-                                    pyautogui.moveTo(x=478, y=481, duration=0.2)
+                                    pyautogui.moveTo(x=318, y=320, duration=0.2)
                                     pyautogui.doubleClick()
 
                                     # go to "Empresas" table to start other class
-                                    pyautogui.moveTo(x=543, y=329, duration=0.3)
+                                    pyautogui.moveTo(x=358, y=216, duration=0.3)
                                     pyautogui.doubleClick()
 
             else:
