@@ -24,15 +24,15 @@ class LoginDominio:
         if center is None:
             raise Exception("User image not found")
         x, y = center
-        x += 150
+        x += 100
         pyautogui.doubleClick(x=x, y=y)
         pyautogui.sleep(0.25)
         pyautogui.press('backspace')
         pyautogui.typewrite(user)
 
     def password_login(self, password):
-        x = 975
-        y = 534
+        x = 640
+        y = 394
         pyautogui.doubleClick(x=x, y=y)
         pyautogui.sleep(0.25)
         pyautogui.press('backspace')
