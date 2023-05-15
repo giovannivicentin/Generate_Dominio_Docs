@@ -71,7 +71,7 @@ class RoutineParameters:
                 pyautogui.hotkey('alt', 'd')
                 time.sleep(1.5)
 
-                if rotina[:2] == "ad":
+                if routine[:2] == "ad":
                     # click in "Na data"
                     pyautogui.moveTo(x=319, y=298, duration=0.2)
                     pyautogui.doubleClick()
